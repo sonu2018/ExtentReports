@@ -41,7 +41,7 @@ public class NewAccount {
 	public void verify_title() {
 		String Expected_page_Title="Your Store";
 		String Actual_page_Title=driver.getTitle();
-		Assert.assertTrue("Title Matches", Expected_page_Title.equals(Actual_page_Title));		
+		Assert.assertEquals("Title Matches",Expected_page_Title,Actual_page_Title);		
 		
 	}
 
@@ -53,7 +53,8 @@ public class NewAccount {
 	@When("Get Register Account Text")
 	public void get_register_account_text() throws IOException {
 		String Expected_Register_Pagetext="Register Account";
-		Assert.assertTrue("Title Matches", Expected_Register_Pagetext.equals(driver.getTitle()));	
+		String ActualTitle=driver.getTitle();
+		Assert.assertEquals("Title Matches", Expected_Register_Pagetext,ActualTitle);	
 		//test.fail("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
 		//test.addScreenCaptureFromPath("screenshot.png");	
 	}
